@@ -1,0 +1,31 @@
+function isValid = validateCreditCard(cardNumber)
+    % Remove non-numeric characters
+    cardNumber = strrep(cardNumber,' ','');
+    cardNumber = strrep(cardNumber,'-','');
+    
+    % Check if the number contains only digits
+    if ~isempty(regexp(cardNumber,'\D', 'once'))
+        isValid = false;
+        return;
+    end
+    
+    % Check if the number is of valid length
+    if numel(cardNumber) < 13 || numel(cardNumber) > 19
+        isValid = false;
+        return;
+    end
+    
+    % Reverse the number
+    reversedNum = fliplr(cardNumber);
+    
+    % Double every second digit
+    doubledNum = reversedNum;
+    doubledNum(1:2:end) = doubledNum(1:2:end) - '0';
+    doubledNum(2:2:end) = mod(2 * doubledNum(2:2:end), 10);
+    
+    % Sum all the digits
+    sumDigits = sum(doubledNum);
+    
+    % Check if the sum is divisible by 10
+    isValid = mod(sumDigits, 10) == 0;
+end
