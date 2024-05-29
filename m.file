@@ -1,5 +1,5 @@
 function isValid = validateCreditCard(cardNumber)
-    % Remove non-numeric characters:
+    % Remove non-numeric characters.
     cardNumber = strrep(cardNumber,' ','');
     cardNumber = strrep(cardNumber,'-','');
     
@@ -9,7 +9,7 @@ function isValid = validateCreditCard(cardNumber)
         return;
     end
     
-    % Check if the number is of valid length
+    % Check if the number is of valid length.
     if numel(cardNumber) < 13 || numel(cardNumber) > 19
         isValid = false;
         return;
