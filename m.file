@@ -3,7 +3,7 @@ function isValid = validateCreditCard(cardNumber)
     cardNumber = strrep(cardNumber,' ','');
     cardNumber = strrep(cardNumber,'-','');
     
-    % Check if the number contains only digits0.23
+    % Check if the number contains only digits
     if ~isempty(regexp(cardNumber,'\D', 'once'))
         isValid = false;
         return;
