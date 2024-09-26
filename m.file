@@ -1,5 +1,6 @@
+% 000000000000000
 function isValid = validateCreditCard(cardNumber)
-    % Remove non-numeric characters.0000000000000000
+    % Remove non-numeric characters.
     cardNumber = strrep(cardNumber,' ','');
     cardNumber = strrep(cardNumber,'-','');
     
