@@ -1,5 +1,5 @@
-% 000000000000000
-function isValid = validateCreditCard(cardNumber)
+% 01
+ditCard(cardNumber)
     % Remove non-numeric characters.
     cardNumber = strrep(cardNumber,' ','');
     cardNumber = strrep(cardNumber,'-','');
